@@ -1,9 +1,9 @@
 import User from "./User.js";
 
-class Admin extends User {
+export default class Admin extends User {
     constructor(nome, email, nascimento, role = "admin", ativo = true) {
         super(nome, email, nascimento, role, ativo);
-        // Super de está definido dentro do constructor da superclasse (que neste caso é o User)
+        // Super de Admin está definido dentro do constructor da superclasse (que neste caso é o User)
     }
 
     criarCurso(nomeCurso, qtdVagas) {
