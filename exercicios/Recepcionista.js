@@ -1,22 +1,16 @@
-export default class Recepcionista {
+import User from "./User.js";
+
+class Recepcionista extends User {
     constructor(nome, sexo, nascimento, role = "recepcionista", ativo = true) {
-        this.nome = nome;
-        this.sexo = sexo;
-        this.nascimento = nascimento;
-        this.role = role;
-        this.ativo = true;
+        super(nome, sexo, nascimento, role, ativo);
     }
 
     cadastrarCliente(nomeCliente) {
-        return `Cliente ${nomeCliente} cadastrado!`;
-    }
-
-    exibirInfos() {
-        return `${this.nome}, ${this.sexo}, ${this.nascimento}, ${this.role}, ${this.ativo}`;
+        return `Cliente ${nomeCliente} cadastrado!`
     }
 }
 
-// const novoRecepcionista = new Recepcionista("Ana", "F", "01-01-1999");
-// console.log(novoRecepcionista);
-// console.log(novoRecepcionista.exibirInfos());
-// console.log(novoRecepcionista.cadastrarCliente("Erik"));
+const newRecepcionista = new Recepcionista("Mariana", "F", "2024-01-01");
+console.log(newRecepcionista);
+console.log(newRecepcionista.exibirInfos());
+console.log(newRecepcionista.cadastrarCliente("João"));
