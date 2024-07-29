@@ -6,6 +6,11 @@ export default class Admin extends User {
         // Super de Admin está definido dentro do constructor da superclasse (que neste caso é o User)
     }
 
+    // exibirInfos() { // polimorfismo - sobreescrever o método da classe principal com um novo comportamento
+    //     const infos = super.exibirInfos(); //
+    //     return `admin - ${infos}`;
+    // }
+
     criarCurso(nomeCurso, qtdVagas) {
         return `Curso ${nomeCurso} criado com ${qtdVagas} vagas`;
     }

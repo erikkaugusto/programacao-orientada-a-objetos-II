@@ -39,8 +39,20 @@ export default class User {
         this.#nome = novoNome;
     }
 
-    exibirInfos() {
-        return `${this.nome}, ${this.email}`;
+    exibirInfos() { // executado a partir de um instância ("new User")
+        if (this.role === "estudante") {
+            return `Dados estudante: ${this.nome}, ${this.email}`;
+        }
+        if (this.role === "admin") {
+            return `Dados admin: ${this.nome}, ${this.role}`;
+        }
+        if (this.role === "docente") {
+            return `Dados docente: ${this.nome}, ${this.email}`;
+        }
+    }
+
+    static exibirInfos(nome, email) { // executado a partir de User
+        return `${nome}, ${email}`;
     }
 }
 
